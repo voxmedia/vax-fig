@@ -12,7 +12,7 @@ var debug = function(msg) {
   }
 }
 
-// http://stackoverflow.com/a/7372816
+// via http://stackoverflow.com/a/7372816
 var base64Encode = function(str) {
   var CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
   var out = "", i = 0, len = str.length, c1, c2, c3;
@@ -41,7 +41,7 @@ var base64Encode = function(str) {
   return out;
 }
 
-// Modified from https://github.com/deanm/omggif/blob/master/omggif.js
+// via https://github.com/deanm/omggif/blob/master/omggif.js
 var readImage = function(buffer, limit) {
   var p = 0;
 
