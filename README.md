@@ -4,17 +4,17 @@ Fig is a jQuery plugin that downloads only the first frame of an animated GIF, s
 
 Usage
 ====
-1. All GIFs on page must have a "data-src" attribute with the source URL. Do not include an actual "src" or else the browser will download the entire file, thus defeating the purpose of this plugin.
+All GIFs on page must have a "data-src" attribute with the source URL. Do not include an actual "src" or else the browser will download the entire file, thus defeating the purpose of this plugin.
 ```
 <img data-src="some.gif"/>
 ```
 
-2. Run the plugin:
+Run the plugin:
 ```
 $('img[data-src]').fig();
 ```
 
-3. Pass in options to change the overlay colors and text:
+You can pass in options to change the overlay colors and text:
 ```
 $('img[data-src]').fig({
   overlayTextColor: "#ff0000",
@@ -26,9 +26,9 @@ $('img[data-src]').fig({
 Demo
 ====
 A Sinatra-based demo app has been included.
-1. Run 'bundle install'
-2. Run app with 'bundle exec ruby app.rb'
-3. Visit http://0.0.0.0:4567 or http://0.0.0.0:4567/more?enabled=1
+- Run 'bundle install'
+- Run app with 'bundle exec ruby app.rb'
+- Visit http://0.0.0.0:4567 or http://0.0.0.0:4567/more?enabled=1
 
 Caveats
 ====
@@ -38,4 +38,3 @@ Caveats
 Credits
 ====
 GIF decoder borrowed from https://github.com/deanm/omggif/blob/master/omggif.js and modified slightly.
->>>>>>> First commit
