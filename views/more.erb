@@ -1,0 +1,16 @@
+<% if @enabled %>
+
+  <% '1'.upto('5').each do |n| %>
+    <img data-src="img/<%= n %>.gif">
+  <% end %>
+  <script type="text/javascript">
+    $('img[data-src]').fig()
+  </script>
+
+<% else %>
+
+  <% '1'.upto('5').each do |n| %>
+    <img src="img/<%= n %>.gif">
+  <% end %>
+
+<% end %>

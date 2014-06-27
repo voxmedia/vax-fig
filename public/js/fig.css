@@ -1,0 +1,19 @@
+._play_gif { position:relative; height:auto; display:inline-block; }
+._play_gif .label {
+  z-index:10;
+  font-size:12px;
+  font-family:'Monaco', sans-serif;
+  line-height:50px;
+  height:50px;
+  width:50px;
+  border-radius:50%;
+  text-align:center;
+  margin: auto;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  opacity:1;
+}
+._play_gif .hidden { opacity:0; }

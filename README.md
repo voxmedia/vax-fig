@@ -1,15 +1,41 @@
 fig
 ===
+Fig is a jQuery plugin that downloads only the first frame of an animated GIF, shows it as a static image, and plays the entire animation on mouse hover. Downloading only the first frame reduces the initial payload and makes pages load faster.
 
-jQuery plugin that downloads only the first frame of an animated GIF
-
-How it works
+Usage
 ====
+1. All GIFs on page must have a "data-src" attribute with the source URL. Do not include an actual "src" or else the browser will download the entire file, thus defeating the purpose of this plugin.
+```
+<img data-src="some.gif"/>
+```
 
-1. For each GIF, send a range request from 0-25,000 bytes to the image URL.
-2. Decode the returned binary data with Javascript using web workers. This offloads the processing to the OS-level thread instead of browser UI thread for better performance.
-3. Scan through the decoded data for the sub-block where the first frame terminates.
-4. If the sub-block is not found, make another range request for the next 25 kilobytes and repeat step 2.
-5. Keep scanning until the sub-block is found, or stop if we've made more than 4 range requests.
-6. When the sub-block is found, there is now enough data to render the first frame.
-7. Base64 encode the first frame and set the image's "src" attribute to the encoded string a'la data URI.
+2. Run the plugin:
+```
+$('img[data-src]').fig();
+```
+
+3. Pass in options to change the overlay colors and text:
+```
+$('img[data-src]').fig({
+  overlayTextColor: "#ff0000",
+  overlayBackgroundColor: "#ffffff",
+  overlayText: "Play"
+});
+```
+
+Demo
+====
+A Sinatra-based demo app has been included.
+1. Run 'bundle install'
+2. Run app with 'bundle exec ruby app.rb'
+3. Visit http://0.0.0.0:4567 or http://0.0.0.0:4567/more?enabled=1
+
+Caveats
+====
+- Images must be served from the same domain or have CORS headers
+- Probably will not work on older versions of IE
+
+Credits
+====
+GIF decoder borrowed from https://github.com/deanm/omggif/blob/master/omggif.js and modified slightly.
+>>>>>>> First commit
