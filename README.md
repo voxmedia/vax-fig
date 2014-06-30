@@ -37,8 +37,9 @@ Caveats
 
 ## Authors
 
-- Jesse Young
-- GIF decoder borrowed from https://github.com/deanm/omggif/blob/master/omggif.js and modified slightly.
+- [@jesse](https://github.com/jesse)
+- GIF decoder borrowed from [@deanm](https://github.com/deanm)'s [omggif](https://github.com/deanm/omggif/blob/master/omggif.js) plugin
+- Base64 encoder borrowed from [n1k0](https://github.com/n1k0) via [http://stackoverflow.com/a/7372816](http://stackoverflow.com/a/7372816)
 
 ## Contribute
 
